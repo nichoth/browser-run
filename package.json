@@ -14,6 +14,7 @@
   "scripts": {
     "build": "browserify browser/reporter.js -o static/reporter.js",
     "prepublish": "npm run build",
+    "postversion": "git push --follow-tags && npm publish",
     "release": "np",
     "test": "npm run build && node--test"
   },
