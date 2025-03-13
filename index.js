@@ -70,6 +70,7 @@ function runner (opts) {
     }
     if (req.url == '/reporter.js') {
       res.setHeader('content-type', 'application/javascript');
+      res.header('Access-Control-Allow-Origin', '*');
       fs.createReadStream(__dirname + '/static/reporter.js').pipe(res);
       return;
     }
